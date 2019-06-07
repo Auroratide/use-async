@@ -8,11 +8,11 @@ import {
 
 import Component from './Component';
 
-describe('Basic Usage', () => {
+describe('Error Handling', () => {
   let wrapper;
 
   const clickButton = () => fireEvent.click(wrapper.getByTestId('button'));
-  const waitForResult = async () => await waitForElement(() => wrapper.getByText(/Result/));
+  const waitForError = async () => await waitForElement(() => wrapper.getByText(/Error/));
   const contentText = () => wrapper.getByTestId('content').textContent;
   
   it('works', async () => {
@@ -20,9 +20,9 @@ describe('Basic Usage', () => {
     
     clickButton();
     expect(contentText()).toBe('Waiting');
-
-    await waitForResult();
-    expect(contentText()).toBe('Result: 1');
+    
+    await waitForError();
+    expect(contentText()).toBe('Error: 1');
   });
 
   afterEach(cleanup);
