@@ -1,4 +1,4 @@
-const { useState } = require('react');
+const { useState, useEffect } = require('react');
 
 module.exports = fn => {
   const [ result, setResult ] = useState();
@@ -15,6 +15,10 @@ module.exports = fn => {
     result,
     waiting,
     error,
-    call
+    call,
+    andCall() {
+      useEffect(() => { call() }, []);
+      return this;
+    }
   };
 }
