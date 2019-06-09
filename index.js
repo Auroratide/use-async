@@ -1,13 +1,13 @@
 const { useState, useEffect } = require('react');
 
-module.exports = fn => {
+module.exports = (fn) => {
   const [ result, setResult ] = useState();
   const [ error, setError ] = useState();
   const [ waiting, setWaiting ] = useState(false);
 
-  const call = async () => {
+  const call = async (...args) => {
     setWaiting(true);
-    setResult(await fn().catch(err => setError(err)));
+    setResult(await fn(...args).catch(err => setError(err)));
     setWaiting(false);
   };
 
@@ -16,8 +16,13 @@ module.exports = fn => {
     waiting,
     error,
     call,
+    withArgs(...args) {
+      this.args = args;
+      this.call = () => call(...args);
+      return this;
+    },
     andCall() {
-      useEffect(() => { call() }, []);
+      useEffect(() => { this.call() }, this.args || []);
       return this;
     }
   };
