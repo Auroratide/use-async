@@ -18,6 +18,10 @@
     "name": "Timothy Foster",
     "url": "https://auroratide.com"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Auroratide/use-async"
+  },
   "license": "ISC",
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.4.4",
