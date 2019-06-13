@@ -15,7 +15,7 @@ describe('Error Handling', () => {
   const waitForError = async () => await waitForElement(() => wrapper.getByText(/Error/));
   const contentText = () => wrapper.getByTestId('content').textContent;
   
-  it('works', async () => {
+  it('should show the error when the operation fails', async () => {
     wrapper = render(<Component />);
     
     clickButton();

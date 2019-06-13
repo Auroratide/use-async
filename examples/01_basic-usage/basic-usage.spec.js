@@ -15,7 +15,7 @@ describe('Basic Usage', () => {
   const waitForResult = async () => await waitForElement(() => wrapper.getByText(/Result/));
   const contentText = () => wrapper.getByTestId('content').textContent;
   
-  it('works', async () => {
+  it('should show the result when the operation resolves', async () => {
     wrapper = render(<Component />);
     
     clickButton();

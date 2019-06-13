@@ -27,7 +27,7 @@ describe('With Async Arguments', () => {
     </>;
   };
   
-  it('works', async () => {
+  it('should call the operation whenever an input argument is updated', async () => {
     wrapper = render(<WrappingComponent />);
     await waitForResult();
     expect(contentText()).toBe('Result: 1');

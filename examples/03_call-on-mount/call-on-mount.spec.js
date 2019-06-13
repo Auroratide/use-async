@@ -13,7 +13,7 @@ describe('Call on Mount', () => {
   const waitForResult = async () => await waitForElement(() => wrapper.getByText(/Result/));
   const contentText = () => wrapper.getByTestId('content').textContent;
   
-  it('works', async () => {
+  it('should automatically call the operation when the component mounts', async () => {
     wrapper = render(<Component />);
     expect(contentText()).toBe('Waiting');
 
