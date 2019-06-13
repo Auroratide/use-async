@@ -1,12 +1,23 @@
 {
   "name": "@auroratide/use-async",
   "version": "0.1.0",
-  "description": "",
+  "description": "Simple React hook for handling asynchronous operations",
+  "keywords": [
+    "react",
+    "hook",
+    "async",
+    "asynchronous",
+    "promises"
+  ],
   "main": "index.js",
   "scripts": {
-    "test": "jest examples"
+    "test": "jest examples",
+    "prepublishOnly": "npm run test"
   },
-  "author": "",
+  "author": {
+    "name": "Timothy Foster",
+    "url": "https://auroratide.com"
+  },
   "license": "ISC",
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.4.4",
@@ -18,5 +29,8 @@
     "jest": "^24.8.0",
     "react": "^v16.9.0-alpha.0",
     "react-dom": "^v16.9.0-alpha.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8"
   }
 }
